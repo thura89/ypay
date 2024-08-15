@@ -7,47 +7,46 @@ import Transitions from "./components/Transitions";
 export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
-      <LinearGradient
-        colors={["rgba(0,0,0,0,8)", "transparent"]}
-        style={styles.background}
-      />
-      <View>
-        <BalanceCard />
-        <View style={styles.action}>
-          <ActionButton
-            label="Transfer"
-            path={"/transfer"}
-            color="#ff009d"
-            icon="compare-arrows"
-          />
-          <ActionButton
-            color="#0e9ce2"
-            icon="qr-code-2"
-            label="Scan"
-            path={"/scan"}
-          />
-          <ActionButton
-            color="#7b48f4"
-            icon="attach-money"
-            label="Fx Rate"
-            path={"/fxrate"}
-          />
-          <ActionButton
-            color="#ff379e"
-            icon="history"
-            label="History"
-            path={"/history"}
-          />
-          /
-        </View>
+			<LinearGradient
+				colors={["rgba(0,0,0,0.8)", "transparent"]}
+				style={styles.background}
+			/>
+			<View>
+				<BalanceCard />
+				<View style={styles.actions}>
+					<ActionButton
+						color="#ff009d"
+						icon="compare-arrows"
+						label="Transfer"
+						path="/transfer"
+					/>
+					<ActionButton
+						color="#0e9ce2"
+						icon="qr-code-2"
+						label="Scan"
+						path="/scan"
+					/>
+					<ActionButton
+						color="#7b48f4"
+						icon="attach-money"
+						label="Fx Rate"
+						path="/fxrate"
+					/>
+					<ActionButton
+						color="#ff379e"
+						icon="history"
+						label="History"
+						path="/history"
+					/>
+				</View>
 
-        <View style={styles.moreActionBar}></View>
-        <View style={styles.transitions}>
-          <Text style={styles.text.label}>Recent Transition</Text>
-          <Transitions />
-        </View>
-      </View>
-    </SafeAreaView>
+				<View style={styles.moreActionBar}></View>
+				<View style={styles.transitions}>
+					<Text style={styles.text.label}>Recent Transactions</Text>
+					<Transitions />
+				</View>
+			</View>
+		</SafeAreaView>
   );
 }
 
@@ -63,7 +62,7 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? 25 : 0,
     backgroundColor: "#6d25e5",
   },
-  action: {
+  actions: {
     paddingTop: 30,
     paddingRight: 25,
     paddingBottom: 25,
